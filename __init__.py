@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 
@@ -9,4 +10,4 @@ async def on_message(message):
         await client.delete_message(message)
         await client.send_message(message.channel, message.content)
 
-client.run('token')
+client.run(os.environ['discord_api_key'])
